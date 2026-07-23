@@ -1,0 +1,200 @@
+---
+import { MapPinned, Phone, Mail, Clock } from "lucide-astro";
+import { village } from "../data/village";
+---
+
+<section
+    id="kontak"
+    class="relative overflow-hidden bg-white py-32"
+>
+
+    <div class="container mx-auto px-6">
+
+        <!-- Heading -->
+
+        <div class="mx-auto mb-16 max-w-3xl text-center">
+
+            <span
+                class="inline-flex rounded-full bg-green-100 px-5 py-2 text-sm font-semibold text-green-700"
+            >
+                Lokasi & Kontak
+            </span>
+
+            <h2
+                class="mt-5 text-5xl font-black text-slate-900"
+            >
+                Kunjungi Desa Hukaea
+            </h2>
+
+            <p
+                class="mt-5 text-lg text-slate-500"
+            >
+                Informasi lokasi kantor desa serta kontak yang dapat
+                dihubungi masyarakat.
+            </p>
+
+        </div>
+
+        <div
+            class="grid gap-10 lg:grid-cols-[1.5fr_1fr]"
+        >
+
+            <!-- MAP -->
+
+            <div
+                class="overflow-hidden rounded-[36px] border border-slate-200 shadow-xl"
+            >
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58984.62983711832!2d121.9561995552419!3d-4.68423629435355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2da2e9d4be86e83d%3A0xc9742a5527d7fe4!2sHukaea%2C%20Rarowatu%20Utara%2C%20Bombana%20Regency%2C%20South%20East%20Sulawesi!5e1!3m2!1sen!2sid!4v1784774982986!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+            </div>
+
+            <!-- CARD -->
+
+            <div
+                class="rounded-[36px] bg-white p-8 shadow-xl"
+            >
+
+                <div class="space-y-8">
+
+                    <!-- Alamat -->
+
+                    <div class="flex gap-4">
+
+                        <div
+                            class="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-100"
+                        >
+                            <MapPinned
+                                class="h-7 w-7 text-green-600"
+                            />
+                        </div>
+
+                        <div>
+
+                            <h3
+                                class="font-semibold text-slate-900"
+                            >
+                                Alamat
+                            </h3>
+
+                            <p
+                                class="mt-1 text-slate-500"
+                            >
+                                {village.contact.address}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Telepon -->
+
+                    <div class="flex gap-4">
+
+                        <div
+                            class="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-100"
+                        >
+                            <Phone
+                                class="h-7 w-7 text-green-600"
+                            />
+                        </div>
+
+                        <div>
+
+                            <h3
+                                class="font-semibold text-slate-900"
+                            >
+                                Telepon
+                            </h3>
+
+                            <p
+                                class="mt-1 text-slate-500"
+                            >
+                                {village.contact.phone}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="flex gap-4">
+
+                        <div
+                            class="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-100"
+                        >
+                            <Mail
+                                class="h-7 w-7 text-green-600"
+                            />
+                        </div>
+
+                        <div>
+
+                            <h3
+                                class="font-semibold text-slate-900"
+                            >
+                                Email
+                            </h3>
+
+                            <p
+                                class="mt-1 text-slate-500"
+                            >
+                                {village.contact.email}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Jam -->
+
+                    <div class="flex gap-4">
+
+                        <div
+                            class="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-100"
+                        >
+                            <Clock
+                                class="h-7 w-7 text-green-600"
+                            />
+                        </div>
+
+                        <div>
+
+                            <h3
+                                class="font-semibold text-slate-900"
+                            >
+                                Jam Pelayanan
+                            </h3>
+
+                            {
+                                village.contact.officeHours.map((item) => (
+                                    <p class="text-slate-500">
+                                        {item}
+                                    </p>
+                                ))
+                            }
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Button -->
+
+                <a
+                    href={village.contact.mapsLink}
+                    target="_blank"
+                    class="mt-10 inline-flex w-full items-center justify-center rounded-2xl bg-green-600 px-6 py-4 font-semibold text-white transition hover:bg-green-700"
+                >
+                    Buka di Google Maps
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
