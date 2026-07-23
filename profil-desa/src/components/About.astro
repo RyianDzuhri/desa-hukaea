@@ -1,0 +1,146 @@
+---
+import { Check, ArrowRight } from "lucide-astro";
+import { village } from "../data/village";
+
+import aboutImage from "../assets/images/about-desa.jpg";
+import { ImageOff } from "lucide-astro";
+---
+
+<section
+    id="profil"
+    class="relative overflow-hidden py-32"
+>
+
+    <!-- Background Blur -->
+
+    <div
+        class="absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-green-100 blur-[140px]"
+    />
+
+    <div
+        class="absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-emerald-100 blur-[140px]"
+    />
+
+    <div class="container relative z-10 mx-auto px-6">
+
+        <div class="grid items-center gap-20 lg:grid-cols-2">
+
+            <!-- FOTO -->
+
+            <div class="relative">
+
+                <!-- <img
+                    src={aboutImage.src}
+                    alt="Desa Hukaea"
+                    class="w-full rounded-[36px] object-cover shadow-[0_30px_80px_rgba(0,0,0,.12)]"
+                /> -->
+
+                <div
+                    class="flex h-[420px] w-full items-center justify-center rounded-[36px]
+                    border border-dashed border-green-200
+                    bg-gradient-to-br from-green-50 to-white
+                    shadow-[0_30px_80px_rgba(0,0,0,.08)]"
+                >
+                    <div class="text-center">
+
+                        <div
+                            class="mx-auto flex h-24 w-24 items-center justify-center rounded-3xl bg-green-100"
+                        >
+                            <ImageOff
+                                class="h-12 w-12 text-green-600"
+                            />
+                        </div>
+
+                        <h3 class="mt-6 text-2xl font-bold text-slate-800">
+                            Foto Desa
+                        </h3>
+
+                        <p class="mt-2 text-slate-500">
+                            Gambar akan ditampilkan di sini
+                        </p>
+
+                    </div>
+                </div>
+
+                <div
+                    class="absolute -bottom-6 -right-6 rounded-3xl border border-white/40 bg-white/80 p-6 backdrop-blur-xl shadow-xl"
+                >
+                    <p class="text-sm text-gray-500">
+                        Kabupaten
+                    </p>
+
+                    <h3 class="text-xl font-bold">
+                        Bombana
+                    </h3>
+                </div>
+
+            </div>
+
+            <!-- CONTENT -->
+
+            <div>
+
+                <span
+                    class="rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-700"
+                >
+                    Tentang Desa
+                </span>
+
+                <h2
+                    class="mt-6 text-5xl font-black leading-tight text-slate-900"
+                >
+                    Membangun Desa yang Modern,
+                    Transparan, dan Berkelanjutan.
+                </h2>
+
+                <p
+                    class="mt-8 text-lg leading-9 text-slate-600"
+                >
+                    {village.about.description}
+                </p>
+
+                <div class="mt-10 space-y-5">
+
+                    {
+                        village.about.highlights.map((item) => (
+                            <div class="flex items-center gap-4">
+
+                                <div
+                                    class="flex h-10 w-10 items-center justify-center rounded-xl bg-green-100"
+                                >
+                                    <Check
+                                        class="h-5 w-5 text-green-700"
+                                    />
+                                </div>
+
+                                <span
+                                    class="text-lg text-slate-700"
+                                >
+                                    {item}
+                                </span>
+
+                            </div>
+                        ))
+                    }
+
+                </div>
+
+                <a
+                    href="#potensi"
+                    class="group mt-12 inline-flex items-center gap-3 rounded-2xl bg-green-600 px-7 py-4 font-semibold text-white transition hover:bg-green-700"
+                >
+                    Jelajahi Potensi Desa
+
+                    <ArrowRight
+                        class="transition group-hover:translate-x-1"
+                    />
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

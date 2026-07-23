@@ -21,4 +21,16 @@ export const village = {
         phone: "08xxxxxxxxxx",
         email: "desa@example.com",
     },
+
+    about: {
+        description:
+            "Desa Hukaea merupakan salah satu desa di Kecamatan Rarowatu Utara, Kabupaten Bombana, Provinsi Sulawesi Tenggara. Desa ini memiliki potensi pada sektor pertanian, perkebunan, dan pengembangan UMKM serta terus berupaya meningkatkan kualitas pelayanan masyarakat melalui pemanfaatan teknologi informasi.",
+
+        highlights: [
+            "Pemerintahan yang transparan",
+            "Potensi pertanian dan perkebunan",
+            "UMKM masyarakat berkembang",
+            "Pelayanan publik berbasis digital",
+        ],
+    },
 };
